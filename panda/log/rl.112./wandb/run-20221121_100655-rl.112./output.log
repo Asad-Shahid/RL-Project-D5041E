@@ -1,0 +1,45 @@
+[33m[2022-11-21 11:06:57,210] Randomly initialize models[0m
+[37m[2022-11-21 11:06:57,214] Start training at step=0[0m
+rl.112.:   0%|                                     | 0/10000000 [00:00<?, ?it/s][37m[2022-11-21 11:07:15,873] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:18,999] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:20,606] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:20,670] Update networks 0[0m
+[37m[2022-11-21 11:07:22,283] Update networks done[0m
+rl.112.:   0%|                       | 1800/10000000 [00:25<38:40:44, 71.80it/s][37m[2022-11-21 11:07:22,284] Evaluate at 1[0m
+[37m[2022-11-21 11:07:23,778] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:25,111] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:26,539] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:27,941] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:28,021] Update networks 1[0m
+[37m[2022-11-21 11:07:29,622] Update networks done[0m
+rl.112.:   0%|                       | 3600/10000000 [00:32<30:28:00, 91.14it/s][37m[2022-11-21 11:07:30,945] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:32,351] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:33,828] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:33,908] Update networks 2[0m
+[37m[2022-11-21 11:07:35,491] Update networks done[0m
+rl.112.:   0%|                      | 5400/10000000 [00:38<24:02:18, 115.49it/s][37m[2022-11-21 11:07:36,804] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:38,171] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:39,479] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:39,542] Update networks 3[0m
+[37m[2022-11-21 11:07:41,206] Update networks done[0m
+rl.112.:   0%|                      | 7200/10000000 [00:43<19:28:03, 142.58it/s][37m[2022-11-21 11:07:42,501] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:43,848] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:45,170] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:45,232] Update networks 4[0m
+[37m[2022-11-21 11:07:46,788] Update networks done[0m
+rl.112.:   0%|                      | 9000/10000000 [00:49<16:12:26, 171.24it/s][37m[2022-11-21 11:07:48,049] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:49,371] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:50,692] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:50,770] Update networks 5[0m
+[37m[2022-11-21 11:07:52,343] Update networks done[0m
+rl.112.:   0%|                     | 10800/10000000 [00:55<13:54:42, 199.46it/s][37m[2022-11-21 11:07:53,587] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:54,901] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:56,199] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:07:56,279] Update networks 6[0m
+[37m[2022-11-21 11:07:57,857] Update networks done[0m
+rl.112.:   0%|                     | 12600/10000000 [01:00<12:17:10, 225.80it/s][37m[2022-11-21 11:07:59,092] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:08:00,329] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:08:01,620] rollout: {'len': 600, 'rew': 0, 'episode_success': 0}[0m
+[37m[2022-11-21 11:08:01,684] Update networks 7[0m
+[37m[2022-11-21 11:08:03,250] Update networks done[0m
+rl.112.:   0%|                     | 14400/10000000 [01:06<11:05:31, 250.07it/s][33m[2022-11-21 11:08:04,124] Received signal 2: exiting[0m

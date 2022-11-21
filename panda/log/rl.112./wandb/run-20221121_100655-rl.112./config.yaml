@@ -1,0 +1,166 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.8.28
+    code_path: code/rl/main.py
+    framework: torch
+    is_jupyter_run: false
+    python_version: 3.6.10
+action_loss_coeff:
+  desc: null
+  value: 0.01
+algo:
+  desc: null
+  value: ppo
+batch_size:
+  desc: null
+  value: 512
+buffer_size:
+  desc: null
+  value: 100000
+ckpt_interval:
+  desc: null
+  value: 200
+ckpt_num:
+  desc: null
+  value: null
+clip_obs:
+  desc: null
+  value: 200
+clip_param:
+  desc: null
+  value: 0.2
+clip_range:
+  desc: null
+  value: 5
+control_freq:
+  desc: null
+  value: 250
+discount_factor:
+  desc: null
+  value: 0.99
+entropy_loss_coeff:
+  desc: null
+  value: 0.0001
+evaluate_interval:
+  desc: null
+  value: 10
+gae_lambda:
+  desc: null
+  value: 0.95
+gpu:
+  desc: null
+  value: 0
+gripper_type:
+  desc: null
+  value: PandaGripper
+gripper_visualization:
+  desc: null
+  value: true
+horizon:
+  desc: null
+  value: 600
+ignore_done:
+  desc: null
+  value: true
+is_chef:
+  desc: null
+  value: true
+is_train:
+  desc: null
+  value: true
+log_dir:
+  desc: null
+  value: log/rl.112.
+log_interval:
+  desc: null
+  value: 1
+log_root_dir:
+  desc: null
+  value: log
+lr_actor:
+  desc: null
+  value: 0.0003
+lr_critic:
+  desc: null
+  value: 0.0003
+max_global_step:
+  desc: null
+  value: 10000000
+max_grad_norm:
+  desc: null
+  value: 100
+mode:
+  desc: null
+  value: 1
+notes:
+  desc: null
+  value: ''
+num_batches:
+  desc: null
+  value: 60
+num_eval:
+  desc: null
+  value: 10
+num_record_samples:
+  desc: null
+  value: 1
+num_workers:
+  desc: null
+  value: 1
+ob_norm:
+  desc: null
+  value: true
+polyak:
+  desc: null
+  value: 0.995
+prefix:
+  desc: null
+  value: rl
+rank:
+  desc: null
+  value: 0
+render_collision_mesh:
+  desc: null
+  value: false
+render_visual_mesh:
+  desc: null
+  value: true
+reward_scale:
+  desc: null
+  value: 1.0
+rl_activation:
+  desc: null
+  value: relu
+rl_hid_size:
+  desc: null
+  value: 64
+rollout_length:
+  desc: null
+  value: 1800
+run_name:
+  desc: null
+  value: rl.112.
+seed:
+  desc: null
+  value: 112
+suffix:
+  desc: null
+  value: ''
+table_full_size:
+  desc: null
+  value:
+  - 0.35
+  - 0.46
+  - 0.02
+tanh_policy:
+  desc: null
+  value: true
+value_loss_coeff:
+  desc: null
+  value: 0.5
+wandb:
+  desc: null
+  value: true

@@ -1,0 +1,26 @@
+{
+    "root": "/home/asad/RL Project - Applied Case Studies of ML/panda",
+    "program": "/home/asad/RL Project - Applied Case Studies of ML/panda/rl/main.py",
+    "codePath": "rl/main.py",
+    "startedAt": "2022-11-21T10:06:55.827203",
+    "host": "DTI-12758",
+    "username": "asad",
+    "executable": "/home/asad/anaconda3/envs/rl-project/bin/python",
+    "os": "Linux-5.15.0-53-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.6.10",
+    "gpu": "Quadro T1000",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "args": [
+        "--is_train",
+        "True",
+        "--seed",
+        "112"
+    ],
+    "state": "killed",
+    "jobType": null,
+    "mode": "run",
+    "project": "robo",
+    "heartbeatAt": "2022-11-21T10:08:04.703293",
+    "exitcode": 255
+}
