@@ -7,7 +7,7 @@ This  repo contains a python toolkit for learning a grasping task with Franka Em
 In order to use this toolkit, you first have to install [MuJoCo 200](https://www.roboti.us/download.html) simulation engine. [mujoco-py](https://github.com/openai/mujoco-py) by Open AI allows to use MuJoCo through python interface.
 The installation requires python 3.6 or higher. It is recommended to install all the required packages under a conda virtual environment. 
 
-After installing mujoco, the new conda environment can be created from ```environment.yml``` file using:
+After installing mujoco, the new conda environment can be created from ```environment.yml``` file. Navigate to ```panda``` directory and run:
 
 ```
 conda env create -f environment.yml
