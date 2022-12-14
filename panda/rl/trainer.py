@@ -19,6 +19,7 @@ from utils.pytorch import get_ckpt_path
 from utils.mpi import mpi_sum
 from environments import make
 
+
 class Trainer():
     """
     Trainer class for SAC and PPO in PyTorch.
@@ -33,8 +34,10 @@ class Trainer():
 
         # create a new environment
         self._env = make("PandaGrasp", config)
-        ob_space = self._env.observation_space # e.g. OrderedDict([('object-state', [10]), ('robot-state', [36])])
-        ac_space = self._env.action_space # e.g. ActionSpace(shape=OrderedDict([('default', 8)]),minimum=-1.0, maximum=1.0)
+        # e.g. OrderedDict([('object-state', [10]), ('robot-state', [36])])
+        ob_space = self._env.observation_space
+        # e.g. ActionSpace(shape=OrderedDict([('default', 8)]),minimum=-1.0, maximum=1.0)
+        ac_space = self._env.action_space
         print('***', ac_space)
 
         # get actor and critic networks
@@ -54,7 +57,7 @@ class Trainer():
             exclude = ['device']
             if not self._config.wandb:
                 os.environ['WANDB_MODE'] = 'dryrun'
-        
+
         # TODO: Insert your wandb account user and project name below
         # Weights and Biases (wandb) is used for logging, set the account details below or dry run above
             # user or team name
@@ -65,7 +68,8 @@ class Trainer():
             wandb.init(
                 resume=config.run_name,
                 project=project,
-                config={k: v for k, v in config.__dict__.items() if k not in exclude},
+                config={k: v for k, v in config.__dict__.items()
+                        if k not in exclude},
                 dir=config.log_dir,
                 entity=entity,
                 notes=config.notes
@@ -79,13 +83,15 @@ class Trainer():
             ckpt_num: number appended to checkpoint name. The number of environment step is used in this code.
             update_iter: number of policy update. It will be used for resuming training.
         """
-        ckpt_path = os.path.join(self._config.log_dir, 'ckpt_%08d.pt' % ckpt_num)
+        ckpt_path = os.path.join(self._config.log_dir,
+                                 'ckpt_%08d.pt' % ckpt_num)
         state_dict = {'step': ckpt_num, 'update_iter': update_iter}
         state_dict['agent'] = self._agent.state_dict()
         torch.save(state_dict, ckpt_path)
         logger.warn('Save checkpoint: %s', ckpt_path)
 
-        replay_path = os.path.join(self._config.log_dir, 'replay_%08d.pkl' % ckpt_num)
+        replay_path = os.path.join(
+            self._config.log_dir, 'replay_%08d.pkl' % ckpt_num)
         with gzip.open(replay_path, 'wb') as f:
             replay_buffers = {'replay': self._agent.replay_buffer()}
             pickle.dump(replay_buffers, f)
@@ -99,11 +105,13 @@ class Trainer():
 
         if ckpt_path is not None:
             logger.warn('Load checkpoint %s', ckpt_path)
-            ckpt = torch.load(ckpt_path) # ckpt is a dict with keys (step, update_iter, agent)
+            # ckpt is a dict with keys (step, update_iter, agent)
+            ckpt = torch.load(ckpt_path, map_location=torch.device('cpu'))
             self._agent.load_state_dict(ckpt['agent'])
 
             if self._config.is_train:
-                replay_path = os.path.join(self._config.log_dir, 'replay_%08d.pkl' % ckpt_num)
+                replay_path = os.path.join(
+                    self._config.log_dir, 'replay_%08d.pkl' % ckpt_num)
                 logger.warn('Load replay_buffer %s', replay_path)
                 with gzip.open(replay_path, 'rb') as f:
                     replay_buffers = pickle.load(f)
@@ -162,7 +170,8 @@ class Trainer():
 
         logger.info("Start training at step=%d", step)
         if self._is_chef:
-            pbar = tqdm(initial=step, total=config.max_global_step, desc=config.run_name)
+            pbar = tqdm(initial=step, total=config.max_global_step,
+                        desc=config.run_name)
             ep_info = defaultdict(list)
 
         # decide how many episodes or how long rollout to collect
@@ -198,7 +207,8 @@ class Trainer():
 
                 self._log_ep(log_step, ep_info)
                 ep_info = defaultdict(list)
-                logger.info('rollout: %s', {k: v for k, v in info.items() if not 'qpos' in k})
+                logger.info('rollout: %s', {
+                            k: v for k, v in info.items() if not 'qpos' in k})
                 self._agent.store_episode(rollout)
                 self._update_normalizer(rollout)
 
@@ -227,7 +237,7 @@ class Trainer():
 
                 if update_iter % config.evaluate_interval == 1:
                     logger.info('Evaluate at %d', update_iter)
-                    rollout, info = self._evaluate(step=step)##
+                    rollout, info = self._evaluate(step=step)
                     self._log_test(step, info)
 
                 if update_iter % config.ckpt_interval == 0:
@@ -253,15 +263,17 @@ class Trainer():
 
             if idx is not None:
                 break
-        logger.info('rollout: %s', {k: v for k, v in info.items() if not 'qpos' in k})
+        logger.info('rollout: %s', {k: v for k,
+                    v in info.items() if not 'qpos' in k})
         return rollout, info
 
     def evaluate(self):
         """ Evaluates an agent stored in chekpoint with @self._config.ckpt_num. """
 
         step, update_iter = self._load_ckpt(ckpt_num=self._config.ckpt_num)
-        logger.info('Run %d evaluations at step=%d, update_iter=%d', self._config.num_eval, step, update_iter)
+        logger.info('Run %d evaluations at step=%d, update_iter=%d',
+                    self._config.num_eval, step, update_iter)
 
         for i in trange(self._config.num_eval):
-            logger.warn("Evalute run %d", i+1)
+            logger.warn("Evalute run %d", i + 1)
             rollout, info = self._evaluate(step=step, idx=i)
