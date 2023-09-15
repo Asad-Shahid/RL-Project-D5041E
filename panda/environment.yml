@@ -1,4 +1,4 @@
-name: robo
+name: rl-project
 channels:
   - defaults
 dependencies:
@@ -84,4 +84,4 @@ dependencies:
       - typing-extensions==4.7.1
       - urllib3==2.0.4
       - wandb==0.15.10
-prefix: /home/asad/miniconda3/envs/robo
+prefix: /home/asad/miniconda3/envs/rl-project
